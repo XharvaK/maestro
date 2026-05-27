@@ -10,7 +10,7 @@
 ### macOS / Linux
 
 ```bash
-git clone https://github.com/YOUR_ORG/maestro.git
+git clone https://github.com/XharvaK/maestro.git
 mkdir -p ~/.cursor/skills
 cp -r maestro ~/.cursor/skills/maestro
 ```
@@ -18,7 +18,7 @@ cp -r maestro ~/.cursor/skills/maestro
 ### Windows (PowerShell)
 
 ```powershell
-git clone https://github.com/YOUR_ORG/maestro.git
+git clone https://github.com/XharvaK/maestro.git
 New-Item -ItemType Directory -Force -Path "$env:USERPROFILE\.cursor\skills"
 Copy-Item -Recurse -Force maestro "$env:USERPROFILE\.cursor\skills\maestro"
 ```
