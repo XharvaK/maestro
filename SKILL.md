@@ -133,7 +133,13 @@ For each phase: open [phases.md](phases.md), find `## Phase N`, follow templates
 
 ## Publishing
 
-Distribute **only** the `maestro/` folder (`SKILL.md` + `phases.md` + `examples.md`). No other skills required.
+Install for Cursor and compatible agents:
+
+```bash
+npx skills add XharvaK/maestro
+```
+
+Manual copy: place `SKILL.md`, `phases.md`, and `examples.md` in `~/.agents/skills/maestro/`. No other skills required.
 
 ---
 

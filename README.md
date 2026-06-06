@@ -4,7 +4,7 @@
 
 Maestro is a self-contained agent skill that orchestrates security, correctness, maintainability, domain-specific, performance, memory, and verification analysis—in **dependency order**—then synthesizes a single executive audit you can act on before release.
 
-No plugin chain. No installing seven separate analyzer skills. Clone, copy to `~/skills/maestro`, invoke `/maestro`.
+No plugin chain. No installing seven separate analyzer skills. `npx skills add XharvaK/maestro`, then invoke `/maestro`.
 
 ---
 
@@ -118,25 +118,33 @@ Maestro inlines every methodology in [`phases.md`](phases.md)—you do not need 
 
 ## Install
 
-### Cursor (recommended)
+### Recommended (skills CLI)
+
+```bash
+npx skills add XharvaK/maestro
+```
+
+Installs to `~/.agents/skills/maestro` for Cursor, Antigravity, and other compatible agents.
+
+### Manual install
 
 ```bash
 git clone https://github.com/XharvaK/maestro.git
-mkdir -p ~/.cursor/skills
-cp -r maestro ~/.cursor/skills/maestro
+mkdir -p ~/.agents/skills
+cp -r maestro ~/.agents/skills/maestro
 ```
 
 On Windows (PowerShell):
 
 ```powershell
 git clone https://github.com/XharvaK/maestro.git
-New-Item -ItemType Directory -Force -Path "$env:USERPROFILE\.cursor\skills"
-Copy-Item -Recurse -Force maestro "$env:USERPROFILE\.cursor\skills\maestro"
+New-Item -ItemType Directory -Force -Path "$env:USERPROFILE\.agents\skills"
+Copy-Item -Recurse -Force maestro "$env:USERPROFILE\.agents\skills\maestro"
 ```
 
 Restart Cursor or open a new Agent chat. Invoke with **`/maestro`** or ask for a **full audit**.
 
-See [docs/INSTALL.md](docs/INSTALL.md) for troubleshooting.
+See [docs/INSTALL.md](docs/INSTALL.md) for troubleshooting and project-scoped install.
 
 ---
 
@@ -201,7 +209,8 @@ Full walkthrough: [`examples.md`](examples.md).
 ```text
 maestro/
 ├── README.md       ← you are here
-├── SKILL.md        ← Cursor skill entry (orchestration + phase table)
+├── CHANGELOG.md    ← release notes
+├── SKILL.md        ← skill entry (orchestration + phase table)
 ├── phases.md       ← all phase methodologies (self-contained)
 ├── examples.md     ← sample audit
 ├── LICENSE
@@ -223,7 +232,7 @@ maestro/
 
 ## Contributing
 
-Issues and PRs welcome. Keep `SKILL.md` under 500 lines; put deep methodology in `phases.md`. See [CONTRIBUTING.md](CONTRIBUTING.md).
+Issues and PRs welcome. Put deep methodology in `phases.md`. See [CONTRIBUTING.md](CONTRIBUTING.md).
 
 ---
 

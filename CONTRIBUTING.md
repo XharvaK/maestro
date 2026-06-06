@@ -13,12 +13,11 @@ Thanks for helping improve Maestro.
 
 | File | Purpose |
 |------|---------|
-| `SKILL.md` | Orchestration, phase table, synthesis template (keep concise) |
-| `phases.md` | Full methodology per phase |
+| `SKILL.md` | Orchestration, phase table, synthesis template |
+| `phases.md` | Full methodology per phase — add depth here |
 | `README.md` | GitHub presentation only |
 | `examples.md` | End-to-end sample audits |
-
-Keep `SKILL.md` under **500 lines**. Add depth to `phases.md`, not `SKILL.md`.
+| `CHANGELOG.md` | Release notes |
 
 ## Pull request checklist
 

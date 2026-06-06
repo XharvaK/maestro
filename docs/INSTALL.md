@@ -3,24 +3,32 @@
 ## Requirements
 
 - [Cursor](https://cursor.com) with Agent Skills enabled
-- Git (to clone the repository)
+- Node.js (for `npx skills`) or Git (for manual clone)
 
 ## Install steps
 
-### macOS / Linux
+### Recommended — skills CLI
+
+```bash
+npx skills add XharvaK/maestro
+```
+
+Installs to `~/.agents/skills/maestro` and registers with Cursor, Antigravity, and other compatible agents.
+
+### Manual — macOS / Linux
 
 ```bash
 git clone https://github.com/XharvaK/maestro.git
-mkdir -p ~/.cursor/skills
-cp -r maestro ~/.cursor/skills/maestro
+mkdir -p ~/.agents/skills
+cp -r maestro ~/.agents/skills/maestro
 ```
 
-### Windows (PowerShell)
+### Manual — Windows (PowerShell)
 
 ```powershell
 git clone https://github.com/XharvaK/maestro.git
-New-Item -ItemType Directory -Force -Path "$env:USERPROFILE\.cursor\skills"
-Copy-Item -Recurse -Force maestro "$env:USERPROFILE\.cursor\skills\maestro"
+New-Item -ItemType Directory -Force -Path "$env:USERPROFILE\.agents\skills"
+Copy-Item -Recurse -Force maestro "$env:USERPROFILE\.agents\skills\maestro"
 ```
 
 ### Verify layout
@@ -28,7 +36,7 @@ Copy-Item -Recurse -Force maestro "$env:USERPROFILE\.cursor\skills\maestro"
 You should have:
 
 ```text
-~/.cursor/skills/maestro/
+~/.agents/skills/maestro/
 ├── SKILL.md
 ├── phases.md
 ├── examples.md
@@ -57,10 +65,10 @@ You should have:
 
 | Issue | Fix |
 |-------|-----|
-| Skill not in picker | Confirm folder name is `maestro` and `SKILL.md` exists; restart Cursor |
+| Skill not in picker | Confirm `~/.agents/skills/maestro/SKILL.md` exists; restart Cursor |
 | Agent skips phases | Say explicitly: "Run all Maestro phases in order per SKILL.md" |
 | Wrong skill loads | Use `/maestro` not generic "audit" without the skill attached |
-| Updates | `cd maestro && git pull` then re-copy to `~/.cursor/skills/maestro` |
+| Updates | `npx skills update maestro` or `cd maestro && git pull` then re-copy to `~/.agents/skills/maestro` |
 
 ## Project-scoped install (team)
 
